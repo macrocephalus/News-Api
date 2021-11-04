@@ -43,7 +43,6 @@ const router = express.Router();
  *           application/json:
  *             $ref: '#/components/schemas/Error500'
  */
-
 router.get('/news', (req, res) => {
 
   newsService.getNewses()
@@ -158,7 +157,6 @@ router.get('/news/:id', (req, res) => {
  *           application/json:
  *             $ref: '#/components/schemas/Error400'
  */
-
 router.post('/news', (req, res) => {
   const schema = Joi.object({
     title: Joi.string().min(3).max(300).required(),
@@ -234,7 +232,6 @@ router.post('/news', (req, res) => {
  *           application/json:
  *             $ref: '#/components/schemas/Error500'
  */
-
 router.put('/news/:id', (req, res) => {
   const idNews = req.params.id;
   const schema = Joi.object({
@@ -309,7 +306,6 @@ router.put('/news/:id', (req, res) => {
  *             $ref: '#/components/schemas/Error500'
  *
  */
-
 router.delete('/news/:id', (req, res) => {
   const idNews = req.params.id;
 
